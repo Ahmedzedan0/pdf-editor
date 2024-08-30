@@ -53,7 +53,7 @@ def save_bounding_box_with_margins_as_pdf(pdf_path, output_pdf_path, margin=100,
             cropped_image = img.crop((min_x, min_y, max_x, max_y))
 
             # Create a new image with white background and larger size for margins
-            new_width = cropped_image.width + 2 * margin
+            new_width = cropped_image.width + 3 * margin
             new_height = cropped_image.height + 3 * margin
             new_image = Image.new("RGB", (new_width, new_height), (255, 255, 255))  # White background
 
@@ -86,4 +86,5 @@ def save_bounding_box_with_margins_as_pdf(pdf_path, output_pdf_path, margin=100,
 
     print(f"Saved new PDF with margins as: {output_pdf_path}")
 
-save_bounding_box_with_margins_as_pdf('Grammatik-Aktiv copy.pdf', 'output_with_margins.pdf', margin=400)
+save_bounding_box_with_margins_as_pdf('Grammatik-Aktiv.pdf',
+                                      'Grammatik-Aktiv-study-mode.pdf', margin=500)
